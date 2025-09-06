@@ -8,6 +8,7 @@ type MaxDepth int
 
 // Boolean flag types with constants
 type FollowSymlinksFlag bool
+
 const (
 	FollowSymlinks   FollowSymlinksFlag = true
 	NoFollowSymlinks FollowSymlinksFlag = false
@@ -23,8 +24,8 @@ type Flags struct {
 }
 
 // Configure methods for the opt system
-func (n Name) Configure(flags *Flags) { flags.Name = n }
-func (t Type) Configure(flags *Flags) { flags.Type = t }
-func (s Size) Configure(flags *Flags) { flags.Size = s }
-func (m MaxDepth) Configure(flags *Flags) { flags.MaxDepth = m }
+func (n Name) Configure(flags *Flags)               { flags.Name = n }
+func (t Type) Configure(flags *Flags)               { flags.Type = t }
+func (s Size) Configure(flags *Flags)               { flags.Size = s }
+func (m MaxDepth) Configure(flags *Flags)           { flags.MaxDepth = m }
 func (f FollowSymlinksFlag) Configure(flags *Flags) { flags.FollowSymlinks = f }

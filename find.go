@@ -7,9 +7,10 @@ import (
 	"os"
 	"path/filepath"
 
-	localopt "github.com/yupsh/find/opt"
 	yup "github.com/yupsh/framework"
 	"github.com/yupsh/framework/opt"
+
+	localopt "github.com/yupsh/find/opt"
 )
 
 // Flags represents the configuration options for the find command
