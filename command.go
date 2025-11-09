@@ -9,20 +9,20 @@ import (
 	`path/filepath`
 	`strings`
 
-	yup "github.com/gloo-foo/framework"
+	gloo "github.com/gloo-foo/framework"
 )
 
 // Dir represents a directory path
 type Dir string
 
-type command yup.Inputs[Dir, flags]
+type command gloo.Inputs[Dir, flags]
 
-func Find(parameters ...any) yup.Command {
+func Find(parameters ...any) gloo.Command {
 	// Initialize recognizes Dir and just parses (no file opening)
-	return command(yup.Initialize[Dir, flags](parameters...))
+	return command(gloo.Initialize[Dir, flags](parameters...))
 }
 
-func (p command) Executor() yup.CommandExecutor {
+func (p command) Executor() gloo.CommandExecutor {
 	return func(ctx context.Context, stdin io.Reader, stdout, stderr io.Writer) error {
 		// Determine starting directories
 		searchPaths := p.Positional
